@@ -1,0 +1,53 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple D3 Dev Env</title>
+    <script type="text/javascript" src="./assets/js/d3/3.2.8/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/dc.css" /> -->
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+
+<script>
+    var data = [];
+    var next = function(x) {
+        return 15 + x * x;
+    };
+
+    var newData = function() {
+        data.push(next);
+        return data;
+    };
+
+    function render() {
+        var selection = d3.select('#container')
+            .selectAll('div')
+            .data(newData);
+
+        selection.enter().append('div').append('span');
+        selection.exit().remove();
+        selection.attr('class', 'v-bar')
+            .style('height', function(d, i) {
+                return d(i) + 'px';
+            })
+            .select('span')
+            .text(function(d, i) {
+                return d(i);
+            })
+    }
+
+
+    setInterval(function() {
+        render();
+    }, 1500);
+
+    render();
+</script>
+
+</html>

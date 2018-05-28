@@ -1,0 +1,105 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <meta name="author" content="长飞光纤光缆有限公司">
+    <meta name="keyword" content="html5,canvas,javascript,思维导图,流程图,拓扑图,网络图,矢量地图">
+    <title>电子卷宗-案情分析</title>
+
+    <link rel="stylesheet" href="./assets/js/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/demo.css?v=1.0.0" />
+    <script type="text/javascript" src="./assets/js/i18n.js"></script>
+    <script type="text/javascript" src="./assets/js/check-IE678.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap/bootstrap.min.js"></script>
+
+</head>
+<div id="page">
+    <div id="right_panel">
+        <div>
+            <ol id="demo_title" class="breadcrumb" style="float: left">
+                <li class="active">电子卷宗-案情分析-Demos</li>
+            </ol>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="graph_panel" class="q-panel">
+            <div role="toolbar" class="q-toolbar">
+                <div>
+                    <div id="toolbar"></div>
+                    <div id="demo_menu" class="q-right">
+                        <div id="btnJSONShow" title="JSON Export" class="btn btn-default btn-sm">
+                            <div class="q-icon toolbar-json"></div>
+                        </div>
+                        <div id="btnOverview" title="Show Overview Panel" class="btn btn-default btn-sm">
+                            <div class="q-icon toolbar-overview"></div>
+                        </div>
+                        <div title="Maximize" id="maximize" class="btn btn-default btn-sm">
+                            <div class="q-icon toolbar-max"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="q-content">
+                <div id="canvas"></div>
+                <div id="overview" style="width: 150px;height: 120px;box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);position: absolute;right: 5px;top: 5px;background-color: #FFF;"></div>
+                <style>
+                    .Q-Export-JSON {
+                        position: absolute;
+                        top: 0px;
+                        bottom: 0px;
+                        right: 0px;
+                        left: 0px;
+                        background: #DDD;
+                        opacity: 0.9;
+                        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+                    }
+                </style>
+                <div class="Q-Export-JSON" id="Q-JSON-Panel" style="height: 0px; overflow: hidden;">
+                    <div style="background: #EEE; position: absolute; top: 50px; bottom: 0px; width: 100%; overflow: auto;">
+                        <textarea id="json_code_panel" style="height: 100%; width: 100%; border: none;"></textarea>
+                    </div>
+                    <div style="padding: 10px; height: 50px; float: right; position: relative;">
+                        <div id="btnJSONSubmit" class="btn btn-primary btn-sm" title="Submit">Submit</div>
+                        <div id="btnJSONClose" class="btn btn-primary btn-sm" title="Close">Close</div>
+                    </div>
+                </div>
+                <div class="mask" id="mask_panel">
+                    <div class="loading">Loading...</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="code_container">
+            <div class="q-toolbar">
+                <div class="row">
+                    <div class="col-md-8 col-xs-6"><span id="code_title">Code</span></div>
+                    <div class="col-md-4 col-xs-6 q-right">
+                        <div id="btnRunCode" class="btn btn-primary btn-sm" title="Run Code">Run</div>
+                    </div>
+                </div>
+            </div>
+            <textarea id="code_panel"></textarea>
+        </div> -->
+    </div>
+</div>
+<div style="clear:both;"></div>
+
+<div style="clear:both;"></div>
+<div class="modal fade" id="q-message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Title</h4>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./assets/js/qunee/2.6.1.15/qunee-min.js?v=1.0.0"></script>
+
+<script type="text/javascript" src="./assets/js/common.js?v=1.0.0"></script>
+<script type="text/javascript" src="./assets/js/graphs.js?v=1.0.0"></script>
+<script type="text/javascript" src="./assets/js/demo.js?v=1.0.0"></script>
+</body>
+
+</html>

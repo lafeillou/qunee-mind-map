@@ -1,0 +1,55 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple D3 Dev Env</title>
+    <script type="text/javascript" src="./assets/js/d3/3.2.8/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/dc.css" /> -->
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var data = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10, 8];
+
+    function render(data) {
+        //进入(Enter)
+        d3.select('body').selectAll('div.h-bar')
+            .data(data)
+            .enter()
+            .append('div')
+            .attr('class', 'h-bar')
+            .append('span');
+
+        //更新(Update)
+        d3.select('body').selectAll('div.h-bar')
+            .data(data)
+            .style('width', function(d) {
+                return (d * 3) + 'px';
+            })
+            .select('span')
+            .text(function(d) {
+                return d;
+            });
+        //退出(Exit)
+        d3.select('body').selectAll('div.h-bar')
+            .data(data)
+            .exit()
+            .remove();
+    }
+
+    setInterval(function() {
+        data.shift();
+        data.push(Math.round(Math.random() * 100));
+        render(data);
+    }, 1500);
+
+    render(data);
+</script>
+
+</html>
